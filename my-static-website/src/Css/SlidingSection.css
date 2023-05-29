@@ -1,0 +1,12 @@
+.sliding-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh / 4);
+    background-color: #f5f5f5;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  /* Add your sliding images styles here */
+  

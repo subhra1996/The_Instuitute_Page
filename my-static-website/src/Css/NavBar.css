@@ -1,0 +1,112 @@
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  z-index: 998;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-menu.active {
+  transform: translateX(0);
+}
+
+.navbar-menu a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  margin: 1rem 0;
+}
+
+.navbar-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggle span:first-child {
+  transform-origin: top;
+}
+
+.navbar-toggle span:last-child {
+  transform-origin: bottom;
+}
+
+.navbar-toggle.active span:first-child {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active span:last-child {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+  transform: scaleX(0);
+}
+
+@media (min-width: 768px) {
+  .navbar-menu {
+    position: static;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    transform: none;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .navbar-menu a {
+    margin: 0 1rem;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+}
